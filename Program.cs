@@ -16,7 +16,7 @@ namespace task
             //Thread[] newThrd = new Thread[10];
             //for (int i = 0; i < 10; i++){
             //    newThrd[i] = new Thread (new ParameterizedThreadStart (DoubleStream));
-            //    newThrd[i].Start(i+2);
+            //    newThrd[i].Start(i);
             //}
             System.Console.WriteLine("Hello");
             Thread.Sleep(800000);
