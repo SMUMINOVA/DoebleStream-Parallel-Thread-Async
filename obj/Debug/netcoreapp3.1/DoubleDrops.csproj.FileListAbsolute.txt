@@ -1,0 +1,13 @@
+/home/sobira/Рабочий стол/c#/DoubleDrops/bin/Debug/netcoreapp3.1/DoubleDrops
+/home/sobira/Рабочий стол/c#/DoubleDrops/bin/Debug/netcoreapp3.1/DoubleDrops.deps.json
+/home/sobira/Рабочий стол/c#/DoubleDrops/bin/Debug/netcoreapp3.1/DoubleDrops.runtimeconfig.json
+/home/sobira/Рабочий стол/c#/DoubleDrops/bin/Debug/netcoreapp3.1/DoubleDrops.runtimeconfig.dev.json
+/home/sobira/Рабочий стол/c#/DoubleDrops/bin/Debug/netcoreapp3.1/DoubleDrops.dll
+/home/sobira/Рабочий стол/c#/DoubleDrops/bin/Debug/netcoreapp3.1/DoubleDrops.pdb
+/home/sobira/Рабочий стол/c#/DoubleDrops/obj/Debug/netcoreapp3.1/DoubleDrops.csprojAssemblyReference.cache
+/home/sobira/Рабочий стол/c#/DoubleDrops/obj/Debug/netcoreapp3.1/DoubleDrops.csproj.CoreCompileInputs.cache
+/home/sobira/Рабочий стол/c#/DoubleDrops/obj/Debug/netcoreapp3.1/DoubleDrops.AssemblyInfoInputs.cache
+/home/sobira/Рабочий стол/c#/DoubleDrops/obj/Debug/netcoreapp3.1/DoubleDrops.AssemblyInfo.cs
+/home/sobira/Рабочий стол/c#/DoubleDrops/obj/Debug/netcoreapp3.1/DoubleDrops.dll
+/home/sobira/Рабочий стол/c#/DoubleDrops/obj/Debug/netcoreapp3.1/DoubleDrops.pdb
+/home/sobira/Рабочий стол/c#/DoubleDrops/obj/Debug/netcoreapp3.1/DoubleDrops.genruntimeconfig.cache
