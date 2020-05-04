@@ -1,38 +1,48 @@
-﻿﻿using System;
+﻿using System;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace task
 {
     class Program
     {
         static object locker = new Object(); 
-        static int GlobalLength = 10;
+        static int GlobalLength = 20;
+        static int flag = 0;
         static void Main(string[] args)
         {
-            Parallel.ForEach(new int[]{1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39}, Stream);
+            Parallel.ForEach(new int[]{1,3,5,7,9,11,13,15,17,19}, DoubleStream);
+            //Stream(2);
+
             Console.ReadKey();            
         }
         static void Stream(int left){
-            int limit1 = new Random().Next(3,7);
+            int limit1 = new Random().Next(3,5);
             int fixLim = limit1; 
             int top1 = 0;
-            int empty = top1;
+            int makeEmpty = top1;
+            int deleteFrom = GlobalLength;
             while(true){
                 lock(locker){
                     if(top1 + limit1 >= GlobalLength){
                         limit1 = GlobalLength - top1;
-                        if(limit1 < 0)
-                           limit1 = 0;
-                    }                    
-                    if(limit1 == 0){
-                        limit1 = fixLim;
-                        top1 = 0;
-                    }                    
-                    empty = top1;
-                    for (int i = 0; i < empty; i++){
+                        if(limit1 < 0){
+                            limit1 = fixLim;
+                            top1 = 0;
+                        }    
+                    }                
+                    makeEmpty = top1;
+                    for (int i = deleteFrom; i < makeEmpty; i++){
                         Console.CursorTop = i;
                         Console.CursorLeft = left;
                         System.Console.WriteLine(" ");
+                    }
+                    if(top1 == 0){
+                        for (int i = deleteFrom; i < GlobalLength; i++){
+                            Console.CursorTop = i;
+                            Console.CursorLeft = left;
+                            System.Console.WriteLine(" ");
+                        }
                     }
                     for(int i = 0; i < limit1; i++){
                         if(i == (limit1 - 1))
@@ -62,16 +72,20 @@ namespace task
                                 case 15: System.Console.WriteLine("9");break;
                             }
                     }
-                    if(top1 == limit1){
-                        for (int i = top1; i < GlobalLength; i++){
-                            Console.CursorTop = i;
-                            Console.CursorLeft = left;
-                            System.Console.WriteLine(" ");
-                        }
-                    }                    
-                    top1 = empty + new Random().Next(1,5);
+                    deleteFrom = top1 - limit1;
+                    top1 = makeEmpty + new Random().Next(2,4);
                 }
+                if(deleteFrom >= 7 && flag == 0){
+                    Task newTask = new Task(() => Stream(left));
+                    newTask.Start();
+                    flag = 1;
+                }
+                Thread.Sleep(500);
             }
+        }
+        static void DoubleStream(int left){
+            flag = 0;
+            Stream(left);
         }
     }
 } 
