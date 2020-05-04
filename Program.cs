@@ -12,6 +12,14 @@ namespace task
         static void Main(string[] args)
         {
             Parallel.ForEach(new int[]{1,3,5,7,9,11,13,15,17,19}, DoubleStream);
+            //DoubleStreamAsync();
+            //Thread[] newThrd = new Thread[10];
+            //for (int i = 0; i < 10; i++){
+            //    newThrd[i] = new Thread (new ParameterizedThreadStart (DoubleStream));
+            //    newThrd[i].Start(i+2);
+            //}
+            System.Console.WriteLine("Hello");
+            Thread.Sleep(800000);
             Console.ReadKey();            
         }
         static void Stream(int left){
@@ -85,5 +93,10 @@ namespace task
             flag = 0;
             Stream(left);
         }
+        //static async void DoubleStreamAsync(){
+        //    System.Console.WriteLine("Start working");
+        //    await Task.Run(() => Stream (5));
+        //    System.Console.WriteLine("End work");
+        //}
     }
 } 
